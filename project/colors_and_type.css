@@ -1,0 +1,304 @@
+/* ============================================================
+   EKARBINA DESIGN SYSTEM — Colors & Typography
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================================
+   COLOR TOKENS — Base Palette
+   ============================================================ */
+
+:root {
+
+  /* Brand Red */
+  --color-crimson-900: #6B051E;
+  --color-crimson-800: #7A0D28;
+  --color-crimson-700: #960F30;
+  --color-crimson-600: #A80D32;
+  --color-crimson-500: #B8103A;   /* PRIMARY */
+  --color-crimson-400: #C9264E;
+  --color-crimson-300: #D85070;
+  --color-crimson-200: #E88FA2;
+  --color-crimson-100: #F5D0D9;
+  --color-crimson-50:  #FDF0F3;
+
+  /* Gold Accent */
+  --color-gold-900: #7A5B2A;
+  --color-gold-800: #9C7438;
+  --color-gold-700: #B08840;
+  --color-gold-600: #BF9855;
+  --color-gold-500: #C9A96E;    /* PRIMARY GOLD */
+  --color-gold-400: #D4BB8A;
+  --color-gold-300: #DFCCA8;
+  --color-gold-200: #ECDDC5;
+  --color-gold-100: #F5EFE0;
+  --color-gold-50:  #FAF7F0;
+
+  /* Neutrals */
+  --color-neutral-950: #0D0D0D;
+  --color-neutral-900: #1A1A1A;
+  --color-neutral-800: #2E2E2E;
+  --color-neutral-700: #3D3D3D;
+  --color-neutral-600: #555555;
+  --color-neutral-500: #717171;
+  --color-neutral-400: #969696;
+  --color-neutral-300: #B8B8B8;
+  --color-neutral-200: #D6D6D6;
+  --color-neutral-100: #EEEBE6;
+  --color-neutral-50:  #F7F5F2;
+  --color-white:       #FFFFFF;
+
+  /* ============================================================
+     SEMANTIC COLOR TOKENS
+     ============================================================ */
+
+  /* Brand */
+  --color-brand-primary:        var(--color-crimson-500);
+  --color-brand-primary-hover:  var(--color-crimson-800);
+  --color-brand-primary-press:  var(--color-crimson-900);
+  --color-brand-on-primary:     var(--color-white);
+  --color-brand-accent:         var(--color-gold-500);
+  --color-brand-accent-hover:   var(--color-gold-600);
+  --color-brand-on-accent:      var(--color-neutral-900);
+
+  /* Backgrounds */
+  --color-bg-page:              var(--color-neutral-50);
+  --color-bg-surface:           var(--color-white);
+  --color-bg-surface-raised:    var(--color-white);
+  --color-bg-dark:              var(--color-neutral-900);
+  --color-bg-dark-surface:      #1F1F1F;
+  --color-bg-subtle:            var(--color-neutral-100);
+
+  /* Foreground / Text */
+  --color-fg-primary:           var(--color-neutral-900);
+  --color-fg-secondary:         var(--color-neutral-800);
+  --color-fg-muted:             var(--color-neutral-500);
+  --color-fg-disabled:          var(--color-neutral-300);
+  --color-fg-on-dark:           var(--color-neutral-50);
+  --color-fg-on-dark-muted:     var(--color-neutral-400);
+
+  /* Borders */
+  --color-border-default:       var(--color-neutral-100);
+  --color-border-subtle:        rgba(0,0,0,0.06);
+  --color-border-gold:          rgba(201,169,110,0.35);
+  --color-border-strong:        var(--color-neutral-200);
+
+  /* Status */
+  --color-success:              #2D7D4E;
+  --color-warning:              #A67C00;
+  --color-error:                var(--color-crimson-500);
+
+  /* ============================================================
+     SHADOWS / ELEVATION
+     ============================================================ */
+
+  --shadow-low:   0 1px 4px rgba(0,0,0,0.06);
+  --shadow-mid:   0 2px 12px rgba(0,0,0,0.10);
+  --shadow-high:  0 8px 32px rgba(0,0,0,0.16);
+
+  /* ============================================================
+     BORDER RADIUS
+     ============================================================ */
+
+  --radius-sm:    2px;
+  --radius-md:    4px;
+  --radius-lg:    6px;
+  --radius-pill:  2px;
+
+  /* ============================================================
+     SPACING SCALE (base 8px)
+     ============================================================ */
+
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10:  128px;
+
+  /* ============================================================
+     TYPOGRAPHY — Font Families
+     ============================================================ */
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* ============================================================
+     TYPOGRAPHY — Scale
+     ============================================================ */
+
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  32px;
+  --text-3xl:  44px;
+  --text-4xl:  60px;
+  --text-5xl:  80px;
+
+  /* Line Heights */
+  --leading-tight:  1.1;
+  --leading-snug:   1.3;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* Letter Spacing */
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-widest:  0.12em;
+
+  /* Font Weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+
+  /* ============================================================
+     SEMANTIC TYPOGRAPHY — Element Styles
+     (Apply these as class utilities or map to HTML elements)
+     ============================================================ */
+
+  /* h1: Display hero headline */
+  --h1-font:    var(--font-display);
+  --h1-size:    var(--text-4xl);
+  --h1-weight:  var(--weight-light);
+  --h1-leading: var(--leading-tight);
+  --h1-spacing: var(--tracking-tight);
+
+  /* h2: Section headline */
+  --h2-font:    var(--font-display);
+  --h2-size:    var(--text-3xl);
+  --h2-weight:  var(--weight-light);
+  --h2-leading: var(--leading-tight);
+  --h2-spacing: var(--tracking-tight);
+
+  /* h3: Sub-section / card title */
+  --h3-font:    var(--font-display);
+  --h3-size:    var(--text-2xl);
+  --h3-weight:  var(--weight-regular);
+  --h3-leading: var(--leading-snug);
+
+  /* h4: Label headline */
+  --h4-font:    var(--font-body);
+  --h4-size:    var(--text-base);
+  --h4-weight:  var(--weight-semibold);
+  --h4-leading: var(--leading-snug);
+  --h4-spacing: var(--tracking-wide);
+
+  /* p: Body text */
+  --p-font:     var(--font-body);
+  --p-size:     var(--text-base);
+  --p-weight:   var(--weight-regular);
+  --p-leading:  var(--leading-normal);
+
+  /* caption / label */
+  --caption-font:     var(--font-body);
+  --caption-size:     var(--text-xs);
+  --caption-weight:   var(--weight-medium);
+  --caption-spacing:  var(--tracking-widest);
+
+  /* overline */
+  --overline-font:    var(--font-body);
+  --overline-size:    var(--text-xs);
+  --overline-weight:  var(--weight-semibold);
+  --overline-spacing: var(--tracking-widest);
+
+  /* code */
+  --code-font:    var(--font-mono);
+  --code-size:    var(--text-sm);
+  --code-weight:  var(--weight-regular);
+
+  /* ============================================================
+     ANIMATION
+     ============================================================ */
+
+  --ease-default:   cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:       cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast:  150ms;
+  --duration-base:  200ms;
+  --duration-slow:  350ms;
+}
+
+/* ============================================================
+   BASE RESET + ELEMENT STYLES
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-fg-primary);
+  background: var(--color-bg-page);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--h1-font);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-leading);
+  letter-spacing: var(--h1-spacing);
+  color: var(--color-fg-primary);
+}
+
+h2 {
+  font-family: var(--h2-font);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-leading);
+  letter-spacing: var(--h2-spacing);
+  color: var(--color-fg-primary);
+}
+
+h3 {
+  font-family: var(--h3-font);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-leading);
+  color: var(--color-fg-primary);
+}
+
+h4 {
+  font-family: var(--h4-font);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-leading);
+  letter-spacing: var(--h4-spacing);
+  text-transform: uppercase;
+  color: var(--color-fg-secondary);
+}
+
+p {
+  font-family: var(--p-font);
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+  line-height: var(--p-leading);
+  color: var(--color-fg-secondary);
+}
+
+code, pre {
+  font-family: var(--code-font);
+  font-size: var(--code-size);
+}
+
+a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  transition: color var(--duration-base) var(--ease-default);
+}
+
+a:hover {
+  color: var(--color-brand-primary-hover);
+}

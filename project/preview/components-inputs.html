@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { background: #F7F5F2; padding: 20px 24px; font-family: 'DM Sans', sans-serif; }
+.field-group { margin-bottom: 16px; }
+.field-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #2E2E2E; margin-bottom: 6px; display: block; }
+.input { width: 100%; padding: 10px 14px; border: 1px solid #D6D6D6; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #1A1A1A; background: #fff; outline: none; transition: border-color 200ms; box-sizing: border-box; }
+.input::placeholder { color: #B8B8B8; }
+.input-focus { border-color: #B8103A; box-shadow: 0 0 0 3px rgba(184,16,58,0.08); }
+.input-error { border-color: #B8103A; }
+.input-disabled { background: #F7F5F2; color: #B8B8B8; cursor: not-allowed; }
+.helper { font-size: 11px; color: #969696; margin-top: 4px; }
+.error-msg { font-size: 11px; color: #B8103A; margin-top: 4px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23717171' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+</style></head><body>
+<div class="row">
+  <div class="field-group">
+    <label class="field-label">Company Name</label>
+    <input class="input" type="text" placeholder="Your company name">
+    <div class="helper">As it should appear on the sign</div>
+  </div>
+  <div class="field-group">
+    <label class="field-label">Sign Type</label>
+    <select class="input select">
+      <option>Select a sign type</option>
+      <option>LED / Illuminated</option>
+      <option>Pylon</option>
+      <option>Acrylic / Dimensional</option>
+      <option>Steel / Brass</option>
+    </select>
+  </div>
+  <div class="field-group">
+    <label class="field-label">Contact Email</label>
+    <input class="input input-focus" type="email" value="client@brand.com">
+  </div>
+  <div class="field-group">
+    <label class="field-label">Phone Number</label>
+    <input class="input input-error" type="tel" value="invalid number">
+    <div class="error-msg">Please enter a valid phone number</div>
+  </div>
+</div>
+</body></html>

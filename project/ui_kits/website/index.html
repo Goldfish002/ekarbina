@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekarbina — Marketing Website UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F7F5F2; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: #F7F5F2; } ::-webkit-scrollbar-thumb { background: #D6D6D6; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="Components.jsx"></script>
+<script type="text/babel">
+const PAGES = ['Home', 'Services', 'Portfolio', 'Contact'];
+
+function App() {
+  const [page, setPage] = React.useState('Home');
+
+  return (
+    <div>
+      <Header activePage={page} onNav={setPage} />
+      {page === 'Home' && (
+        <>
+          <Hero onNav={setPage} />
+          <Stats />
+          <Services />
+          <Portfolio />
+          <ContactCTA onNav={setPage} />
+        </>
+      )}
+      {page === 'Services' && (
+        <>
+          <ServiceHero />
+          <Services />
+          <Stats />
+          <ContactCTA onNav={setPage} />
+        </>
+      )}
+      {page === 'Portfolio' && (
+        <>
+          <PortfolioPage />
+          <ContactCTA onNav={setPage} />
+        </>
+      )}
+      {page === 'Contact' && <ContactPage />}
+      <Footer />
+    </div>
+  );
+}
+
+function ServiceHero() {
+  const s = {
+    section: { background: '#141414', padding: '72px 48px 56px', borderBottom: '1px solid #2E2E2E' },
+    overline: { fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A96E', marginBottom: 16 },
+    h1: { fontFamily: "'Cormorant Garamond', serif", fontSize: 52, fontWeight: 300, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: 16 },
+    body: { fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: '#717171', lineHeight: 1.65, maxWidth: 560 },
+    rule: { width: 40, height: 2, background: '#C9A96E', margin: '0 0 24px' },
+  };
+  return (
+    <section style={s.section}>
+      <div style={s.overline}>What We Offer</div>
+      <div style={s.rule}></div>
+      <h1 style={s.h1}>Every material.<br />Every application.</h1>
+      <p style={s.body}>From illuminated LED fascias to precision-machined brass lettering — Ekarbina covers the full spectrum of commercial signage fabrication.</p>
+    </section>
+  );
+}
+
+function PortfolioPage() {
+  const projects = [
+    { title: 'Corporate Tower Pylon', location: 'Kuala Lumpur', type: 'Pylon · Stainless Steel', year: '2023', bg: '#1F1F1F' },
+    { title: 'Retail LED Fascia', location: 'Petaling Jaya', type: 'LED · Panaflex', year: '2023', bg: '#2A1015' },
+    { title: 'Hotel Lobby Lettering', location: 'Putrajaya', type: 'Brass · Dimensional', year: '2022', bg: '#191714' },
+    { title: 'Mall Directory System', location: 'Shah Alam', type: 'Acrylic · Backlit', year: '2022', bg: '#111820' },
+    { title: 'Clinic Wayfinding', location: 'Cyberjaya', type: 'Acrylic · Vinyl', year: '2022', bg: '#131A13' },
+    { title: 'F&B Outlet Signage', location: 'Bangsar', type: 'LED Neon · 3D Letters', year: '2021', bg: '#1A1310' },
+  ];
+  const s = {
+    page: { background: '#141414', padding: '64px 48px' },
+    head: { marginBottom: 40 },
+    overline: { fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A96E', marginBottom: 12 },
+    h2: { fontFamily: "'Cormorant Garamond', serif", fontSize: 44, fontWeight: 300, color: '#fff', lineHeight: 1.05 },
+    grid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 },
+    card: (bg) => ({ background: bg, border: '1px solid #2E2E2E', borderRadius: 4, height: 260, padding: 22, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', position: 'relative', overflow: 'hidden', cursor: 'pointer' }),
+    corner: { position: 'absolute', top: 16, right: 16, width: 20, height: 20, border: '1px solid rgba(201,169,110,0.35)', borderRadius: 2 },
+    type: { fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#C9A96E', marginBottom: 6 },
+    title: { fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 400, color: '#fff', marginBottom: 4 },
+    meta: { fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: '#555', display: 'flex', justifyContent: 'space-between' },
+  };
+  return (
+    <div style={s.page}>
+      <div style={s.head}>
+        <div style={s.overline}>Our Work</div>
+        <h2 style={s.h2}>Selected projects.</h2>
+      </div>
+      <div style={s.grid}>
+        {projects.map(p => (
+          <div key={p.title} style={s.card(p.bg)}>
+            <div style={s.corner}></div>
+            <div style={s.type}>{p.type}</div>
+            <div style={s.title}>{p.title}</div>
+            <div style={s.meta}><span>{p.location}</span><span>{p.year}</span></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>

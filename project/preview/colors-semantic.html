@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; padding: 20px 24px; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+.token { position: relative; border-radius: 3px; overflow: hidden; height: 88px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px 12px; }
+.token-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; opacity: 0.85; }
+.token-desc  { font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 0.04em; opacity: 0.5; margin-top: 2px; }
+
+/* light tokens — text dark */
+.on-light .token-label { color: #1A1A1A; }
+.on-light .token-desc  { color: #1A1A1A; }
+
+/* dark tokens — text light */
+.on-dark .token-label { color: #F7F5F2; }
+.on-dark .token-desc  { color: #F7F5F2; }
+
+/* gold dot accent */
+.dot { position: absolute; top: 10px; right: 11px; width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.7; }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <div class="token on-dark" style="background:#B8103A;">
+    <div class="dot"></div>
+    <div class="token-label">brand-primary</div>
+    <div class="token-desc">#B8103A — CTAs, links</div>
+  </div>
+
+  <div class="token on-dark" style="background:#7A0D28;">
+    <div class="dot"></div>
+    <div class="token-label">brand-primary-hover</div>
+    <div class="token-desc">#7A0D28 — Hover state</div>
+  </div>
+
+  <div class="token on-dark" style="background:#C9A96E;">
+    <div class="dot" style="background:#fff;"></div>
+    <div class="token-label">brand-accent</div>
+    <div class="token-desc">#C9A96E — Gold highlight</div>
+  </div>
+
+  <div class="token on-dark" style="background:#1A1A1A; border: 1px solid #2E2E2E;">
+    <div class="dot"></div>
+    <div class="token-label">bg-dark</div>
+    <div class="token-desc">#1A1A1A — Dark sections</div>
+  </div>
+
+  <div class="token on-light" style="background:#F7F5F2; border: 1px solid #E8E4DE;">
+    <div class="dot"></div>
+    <div class="token-label">bg-page</div>
+    <div class="token-desc">#F7F5F2 — Page background</div>
+  </div>
+
+  <div class="token on-light" style="background:#FFFFFF; border: 1px solid #E8E4DE;">
+    <div class="dot"></div>
+    <div class="token-label">bg-surface</div>
+    <div class="token-desc">#FFFFFF — Cards, panels</div>
+  </div>
+
+  <div class="token on-dark" style="background:#2E2E2E;">
+    <div class="dot"></div>
+    <div class="token-label">fg-primary</div>
+    <div class="token-desc">#1A1A1A — Headlines</div>
+  </div>
+
+  <div class="token on-dark" style="background:#717171;">
+    <div class="dot"></div>
+    <div class="token-label">fg-muted</div>
+    <div class="token-desc">#717171 — Captions</div>
+  </div>
+
+</div>
+</body></html>
